@@ -12,7 +12,7 @@
 
 # 技術
 
-- ruby 3.2.2
+- ruby 3.4.9
 - sinatra
   - puma
 - active_record
