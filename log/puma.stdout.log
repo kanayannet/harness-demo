@@ -1,0 +1,21 @@
+=== puma startup: 2026-04-13 18:51:30 +0900 ===
+[64771] - Worker 0 (PID: 64825) booted in 0.0s, phase: 0
+[64771] - Worker 1 (PID: 64826) booted in 0.0s, phase: 0
+=== puma startup: 2026-04-13 18:52:27 +0900 ===
+[65727] - Worker 0 (PID: 65768) booted in 0.0s, phase: 0
+[65727] - Worker 1 (PID: 65769) booted in 0.0s, phase: 0
+[65727] - Gracefully shutting down workers...
+[65727] === puma shutdown: 2026-04-13 18:53:17 +0900 ===
+[65727] - Goodbye!
+=== puma startup: 2026-04-13 18:53:50 +0900 ===
+[67076] - Worker 0 (PID: 67104) booted in 0.0s, phase: 0
+[67076] - Worker 1 (PID: 67105) booted in 0.0s, phase: 0
+[67076] - Gracefully shutting down workers...
+[67076] === puma shutdown: 2026-04-13 18:58:17 +0900 ===
+[67076] - Goodbye!
+=== puma startup: 2026-04-13 19:07:28 +0900 ===
+[18377] - Worker 0 (PID: 18431) booted in 0.0s, phase: 0
+[18377] - Worker 1 (PID: 18432) booted in 0.0s, phase: 0
+[18377] - Gracefully shutting down workers...
+[18377] === puma shutdown: 2026-04-13 19:07:42 +0900 ===
+[18377] - Goodbye!

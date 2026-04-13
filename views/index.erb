@@ -1,0 +1,53 @@
+<section class="card">
+  <h2>投稿機能</h2>
+  <form action="/posts" method="post">
+    <label for="name">名前</label>
+    <input id="name" name="name" type="text" maxlength="30" placeholder="匿名" />
+
+    <label for="body">本文</label>
+    <textarea id="body" name="body" rows="4" maxlength="500" required></textarea>
+
+    <button type="submit">投稿する</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2>一覧表示</h2>
+  <% if @posts.empty? %>
+    <p class="empty">投稿はまだありません。</p>
+  <% else %>
+    <ul class="post-list">
+      <% @posts.each do |post| %>
+        <li class="post-item">
+          <div class="meta">
+            <strong><%= esc(post.name) %></strong>
+            <span><%= esc(post.created_at.strftime("%Y-%m-%d %H:%M:%S")) %></span>
+          </div>
+          <p><%= esc(post.body) %></p>
+
+
+          <% replies = post.replies.children_oldest_first %>
+          <% unless replies.empty? %>
+            <ul class="reply-list">
+              <% replies.each do |reply| %>
+                <li class="reply-item">
+                  <div class="meta">
+                    <strong><%= esc(reply.name) %></strong>
+                    <span><%= esc(reply.created_at.strftime("%Y-%m-%d %H:%M:%S")) %></span>
+                  </div>
+                  <p><%= esc(reply.body) %></p>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+          <form action="/posts" method="post" class="reply-form">
+            <input type="hidden" name="parent_id" value="<%= post.id %>" />
+            <input name="name" type="text" maxlength="30" placeholder="返信者名（省略可）" />
+            <textarea name="body" rows="2" maxlength="500" required placeholder="返信を書く"></textarea>
+            <button type="submit">返信する</button>
+          </form>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</section>
